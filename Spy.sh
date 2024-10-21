@@ -48,7 +48,7 @@ echo -e "${RED}$(figlet -f slant ektoxy)${NC}"
 echo -e "${RED}==============================${NC}"
 
 # Mensagens adicionais
-echo -e "${RED}Bem-vindo ao Inferno!${NC}"
+echo -e "${RED}Bem-vindo ao Inferno${NC}"
 echo -e "${RED}Escolha uma opção:${NC}"
 echo "1. Câmera frontal"
 echo "2. Câmera traseira"
