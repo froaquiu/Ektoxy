@@ -27,13 +27,14 @@ echo -e "${RED}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀�
 echo -e "${RED}$(figlet -f slant 712 corpse)${NC}"
 
 # Divisão
-echo -e "${RED}==============================${NC}"
+echo -e "${RED}================================================${NC}"
 
 # Texto grande "I SEE YOU"
-echo -e "${RED}$(figlet -f slant ektoxy)${NC}"
+echo -e "${RED}$(figlet -f slant I SEE YOU)${NC}"
 
 # Segunda divisão
-echo -e "${RED}==============================${NC}"
+echo -e "${RED}================================================${NC}"
+
 
 # Mensagens adicionais
 echo -e "${RED}Bem-vindo ao Inferno${NC}"
