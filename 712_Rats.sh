@@ -40,7 +40,7 @@ echo "
             --- OO'* \`OOOOOOOOOO'*  \`OOOOO--
                 OO.   OOOOOOOOO'    .OOOOO o
                 \`OOOooOOOOOOOOOooooOOOOOO'OOOo
-              .OO "OOOOOOOOOOOOOOOOOOOO"OOOOOOOo
+              .OO 'OOOOOOOOOOOOOOOOOOOO'OOOOOOOo
           __ OOOOOO\`OOOOOOOOOOOOOOOO’OOOOOOOOOOOOo
          ___OOOOOOOO_'OOOOOOOOOOO'_OOOOOOOOOOOOOOOO
            OOOOO^OOOO0\`(____)/'OOOOOOOOOOOOO^OOOOOO
@@ -58,7 +58,7 @@ echo "
              'OOOOOOO00000000000000000OOOOOOOOOO'
   .ooooOOOOOOOo’OOOOOOO000000000000OOOOOOOOOO0'
 .OOO''''''''''.oOOOOOOOOOOOOOOOOOOOOOOOOOOOOo
-OOO         QQQQO"'                     \`QQQQ
+OOO         QQQQO''                     \`QQQQ
 OOO
 \`OOo.
   \'OOOOOOOOOOOOoooooooo.... " | lolcat 
