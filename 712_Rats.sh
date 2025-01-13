@@ -87,7 +87,6 @@ echo "3. Внедрить троян на другие устройства" | l
 echo -n "Введите номер: " | lolcat
 read OPTION
 
-
 # Validar entrada do usuário
 case $OPTION in
     1)
