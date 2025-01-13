@@ -28,7 +28,7 @@ function rainbow_text {
 }
 
 # Arte ASCII antiga (original)
-echo "
+echo " 712
                _                       __
               /   \\                  /      \\
              '      \\              /          \\
