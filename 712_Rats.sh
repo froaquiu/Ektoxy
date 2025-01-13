@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 # Função para imprimir texto em cores do arco-íris
 function rainbow_text {
     # Definir as cores do arco-íris
@@ -24,8 +26,6 @@ function rainbow_text {
     done
     echo ""  # Nova linha no final
 }
-
-clear
 
 # Arte ASCII antiga (original)
 rainbow_text "
