@@ -28,7 +28,7 @@ function rainbow_text {
 }
 
 # Arte ASCII antiga
-echo -e "
+echo -e "°°
                _                       __
               /   \\                  /      \\
              '      \\              /          \\
@@ -58,11 +58,11 @@ echo -e "
              'OOOOOOO00000000000000000OOOOOOOOOO'
   .ooooOOOOOOOo'OOOOOOO000000000000OOOOOOOOOOO'
 .OOO''''''''''.oOOOOOOOOOOOOOOOOOOOOOOOOOOOOo
-OOO         QQQQO\"'                     \`QQQQ
+OOO         QQQQO\°'                     \°QQQQ
 OOO
-\`OOo.
-  \`'OOOOOOOOOOOOoooooooo....
-" | lolcat 
+\°OOo.
+  \°'OOOOOOOOOOOOoooooooo....
+" | lolcat
 
 # Nova arte ASCII do título
 echo -e "
