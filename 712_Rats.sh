@@ -28,7 +28,7 @@ function rainbow_text {
 }
 
 # Arte ASCII antiga
-echo "
+echo -e "
                _                       __
               /   \\                  /      \\
              '      \\              /          \\
@@ -65,7 +65,7 @@ OOO
 " | lolcat 
 
 # Nova arte ASCII do título
-echo "
+echo -e "
 8888888888  d888    .d8888b.       8888888b.                                 888
       d88P d8888   d88P  Y88b      888   Y88b                                888
      d88P    888          888      888    888                                888
@@ -87,9 +87,19 @@ echo "3. Внедрить троян на другие устройства" | l
 echo -n "Введите номер: " | lolcat
 read OPTION
 
+# Validar entrada do usuário
 case $OPTION in
-    1) rainbow_text "Вы выбрали: Внедрить троян на Android" ;;
-    2) rainbow_text "Вы выбрали: Внедрить троян на iOS" ;;
-    3) rainbow_text "Вы выбрали: Внедрить троян на другие устройства" ;;
-    *) rainbow_text "Ошибка: Неверный выбор. Попробуйте снова." ;;
+    1)
+        rainbow_text "Вы выбрали: Внедрить троян на Android"
+        ;;
+    2)
+        rainbow_text "Вы выбрали: Внедрить троян на iOS"
+        ;;
+    3)
+        rainbow_text "Вы выбрали: Внедрить троян на другие устройства"
+        ;;
+    *)
+        rainbow_text "Ошибка: Неверный выбор. Попробуйте снова."
+        exit 1
+        ;;
 esac
