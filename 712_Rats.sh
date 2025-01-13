@@ -25,8 +25,7 @@ function second_page {
 function display_art {
 
     # Título "BULLDOZER" com lolcat
-    figlet "712 Remote Acess
-               Trojan" | lolcat
+    figlet "712 Remote Acess Trojan" | lolcat
 }
 
 display_art
