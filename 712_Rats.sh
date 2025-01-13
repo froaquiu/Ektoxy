@@ -61,8 +61,7 @@ rainbow_text "
 OOO         QQQQO"'                     \`QQQQ
 OOO
 \`OOo.
-  \'OOOOOOOOOOOOoooooooo....
-"
+  \'OOOOOOOOOOOOoooooooo.... "
 
 # Nova arte ASCII do título
 rainbow_text "
