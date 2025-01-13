@@ -28,7 +28,7 @@ function rainbow_text {
 }
 
 # Arte ASCII antiga (original)
-rainbow_text "
+echo "
                _                       __
               /   \\                  /      \\
              '      \\              /          \\
@@ -61,10 +61,10 @@ rainbow_text "
 OOO         QQQQO"'                     \`QQQQ
 OOO
 \`OOo.
-  \'OOOOOOOOOOOOoooooooo.... "
+  \'OOOOOOOOOOOOoooooooo.... " | lolcat 
 
 # Nova arte ASCII do título
-rainbow_text "
+echo "
 8888888888  d888    .d8888b.       8888888b.                                 888
       d88P d8888   d88P  Y88b      888   Y88b                                888
      d88P    888          888      888    888                                888
@@ -85,17 +85,16 @@ d88P       8888888 888888888       888   T88b "Y8888  888  888  888  "Y88P"   "Y
                                      888
                                     d88P
                                   888P"
-"
-
+" | lolcat
 # Separador colorido em arco-íris
-rainbow_text "================================================================================"
+echo "================================================================================" | lolcat
 
 # Menu de opções em russo
-rainbow_text "Выберите устройство для инъекции трояна:"
-rainbow_text "1. Внедрить троян на Android"
-rainbow_text "2. Внедрить троян на iOS"
-rainbow_text "3. Внедрить троян на другие устройства"
-echo -n "Введите номер: "
+echo "Выберите устройство для инъекции трояна:" | lolcat
+echo"1. Внедрить троян на Android" | lolcat
+echo "2. Внедрить троян на iOS" | lolcat
+echo "3. Внедрить троян на другие устройства" | lolcat
+echo -n "Введите номер: " | lolcat
 read OPTION
 
 # Validar entrada do usuário
