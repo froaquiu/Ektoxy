@@ -40,7 +40,7 @@ heart1 = r"""
 """
 
 heart2 = r"""
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡶⠶⢦⣄⠀⠀⠀⠀⠀⣴⠟⠛⢧⣠⣶⣿⠻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡶⠶⢦⣄⠀⠀⠀⠀⠀⣴⠟⠛⢧⣠⣶⣿⠻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⡟⠦⠌⠛⠉⠉⠉⢹⠇⢠⣶⣼⣷⣞⢙⣧⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣤⠃⠀⠀⠀⠀⠀⠀⣿⠀⠈⢻⡃⠀⢸⡿⡄⠈⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠁⠀⠀⠀⠀⠀⠀⠀⠘⠷⠖⠛⠛⠛⢿⡗⢋⣴⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -55,25 +55,35 @@ heart2 = r"""
 ⠀⠀⠀⠙⠷⠤⠿⠶⠦⠶⠞⠋⠘⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃⠈⠻⠦⠴⠖⠻⠶⠶⠛⠁⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠻⢦⣄⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠶⣄⡀⢀⣤⠶⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀꒰♡˃̶̤́ ꒳ ˂̶̤̀ ꒱꒰♡˃̶̤́ ꒳ ˂̶̤̀ ꒱😇😇𓆩♡𓆪𓆩♡𓆪𓆩ꨄ︎𓆪𓆩♡𓆪☆
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀MINHA IMUNDA NOJENTA IMUNDA IMUNDA IMUNDA 
 """
 
-text = "true love"
+text = "Assing + Evy"
+
+def figlet_text(text):
+    # Usa o figlet do sistema para criar texto ASCII grande
+    try:
+        output = subprocess.check_output(['figlet', text], text=True)
+    except Exception as e:
+        # fallback simples se não tiver figlet instalado
+        output = text
+    return output
 
 try:
     while True:
         clear()
-        # Prepare the whole output block with heart1 + text centered
-        output = center_text(heart1) + "\n\n" + center_text(text) + "\n"
-        # Pipe it to lolcat for color effect
+        output_heart1 = center_text(heart1)
+        output_text = center_text(figlet_text(text))
+        full_output = output_heart1 + "\n\n" + output_text + "\n"
         proc = subprocess.Popen(['lolcat'], stdin=subprocess.PIPE)
-        proc.communicate(output.encode('utf-8'))
+        proc.communicate(full_output.encode('utf-8'))
         time.sleep(1)
 
         clear()
-        output = center_text(heart2) + "\n\n" + center_text(text) + "\n"
+        output_heart2 = center_text(heart2)
+        full_output = output_heart2 + "\n\n" + output_text + "\n"
         proc = subprocess.Popen(['lolcat'], stdin=subprocess.PIPE)
-        proc.communicate(output.encode('utf-8'))
+        proc.communicate(full_output.encode('utf-8'))
         time.sleep(1)
 
 except KeyboardInterrupt:
