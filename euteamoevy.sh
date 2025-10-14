@@ -16,7 +16,7 @@ fi
 
 # Função para exibir a arte ASCII + mensagem
 show_ascii() {
-cat << "EOF"
+acho -e "
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡾⢏⠉⣷⠀⠀⠀⠀⠀⢀⣀⣀⣀⣶⣆⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣠⣤⣤⣴⣶⣟⣡⣤⣬⣧⣽⣆⣠⡴⠖⠛⠉⠉⠁⠀⠀⠀⠀⠉⠉⠙⠓⠶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -39,11 +39,10 @@ cat << "EOF"
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⢿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡏⠉⠈⠉⠉⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠾⠀⢸⠿⡆⠀⣿⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⢯⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣂⣀⣌⣷⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣃⣤⠾⠋⢠⡇⡀⣿⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠈⠀⠀⠉⠉⠉⠁⠁⠀⠀⠀⠀⠈⠉⠉⠛⠛⠛⠛⠛⠛⠛⠛⠛⠉⠉⠉⠀⠀⠀⠈⠛⠟⠁⠀⠀⠀⠀
-
-EOF
+" | lolcat
 
 # Mensagem com figlet Hellcat
-figlet -f Hellcat "Eu te amo Evellyn"
+figlet "EU TE AMO EVELLYN" | lolcat
 }
 
 # Loop para piscar imagem e ASCII
