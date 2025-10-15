@@ -14,7 +14,7 @@ then
     exit
 fi
 
-# Função para mostrar a arte final + mensagem
+# Função para mostrar arte final + mensagem
 show_ascii() {
 echo -e "
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -44,30 +44,37 @@ echo -e "
 figlet -f Hellcat "EU TE AMO EVELLYN" | lolcat
 }
 
-# Frames do coração (simples)
-heart="❤"
+# Coração em ASCII art
+heart_ascii=("  **   **  "
+             " ****** **** "
+             "***********"
+             " ********* "
+             "  *******  "
+             "   *****   "
+             "    ***    "
+             "     *     ")
 
-# Obter tamanho do terminal
+# Tamanho do terminal
 cols=$(tput cols)
 lines=$(tput lines)
 
-# Número de corações na tela
-num_hearts=7
+# Número de corações
+num_hearts=4
 
-# Gerar posições iniciais aleatórias
+# Inicializa posições aleatórias
 declare -a x
 declare -a y
 declare -a dx
 declare -a dy
 
 for ((i=0;i<num_hearts;i++)); do
-  x[i]=$((RANDOM % cols))
-  y[i]=$((RANDOM % lines))
-  dx[i]=$(( (RANDOM % 3) - 1 )) # movimento horizontal -1,0,1
-  dy[i]=$(( (RANDOM % 3) - 1 )) # movimento vertical -1,0,1
+  x[i]=$((RANDOM % (cols-10))) # largura do coração ~10
+  y[i]=$((RANDOM % (lines-8))) # altura do coração ~8
+  dx[i]=$(( (RANDOM % 3) - 1 ))
+  dy[i]=$(( (RANDOM % 3) - 1 ))
 done
 
-# Loop principal (corações girando/flutuando)
+# Loop da animação
 loops=5
 for ((l=0;l<loops;l++)); do
   for ((t=0;t<20;t++)); do
@@ -76,19 +83,26 @@ for ((l=0;l<loops;l++)); do
     chafa logo.jpg
     # Mostrar corações
     for ((i=0;i<num_hearts;i++)); do
-      tput cup ${y[i]} ${x[i]}
-      echo -e "$heart" | lolcat -a -d 1
+      for ((k=0;k<${#heart_ascii[@]};k++)); do
+        row=$((y[i]+k))
+        col=$((x[i]))
+        # Não ultrapassar borda inferior
+        if [ $row -lt $lines ]; then
+          tput cup $row $col
+          echo -e "${heart_ascii[k]}" | lolcat -a -d 1
+        fi
+      done
       # Atualizar posição
       x[i]=$((x[i]+dx[i]))
       y[i]=$((y[i]+dy[i]))
       # Inverter direção se bater na borda
-      (( x[i]<=0 || x[i]>=cols )) && dx[i]=$(( -dx[i] ))
-      (( y[i]<=0 || y[i]>=lines )) && dy[i]=$(( -dy[i] ))
+      (( x[i]<=0 || x[i]>=cols-10 )) && dx[i]=$(( -dx[i] ))
+      (( y[i]<=0 || y[i]>=lines-8 )) && dy[i]=$(( -dy[i] ))
     done
-    sleep 0.2
+    sleep 0.3
   done
 done
 
-# Exibe arte + mensagem final
+# Mostra arte final
 clear
 show_ascii
